@@ -1,0 +1,163 @@
+p{
+    text-align: justify;
+}
+
+card-body{
+    height: 10.5rem;
+}
+
+#libelle{
+    animation-name: libelle;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    // animation: slide;
+    // width: 100px;
+    // height: 100px;
+    position: relative;
+}
+
+@keyframes libelle{
+    0% {left:0px; top:0px;}
+    20%  {left:600px; top:250px;}
+    40%  {left:0px; top:450px;}
+    55% {left:1000px; top:1100px;}
+    70% {left:300px; top:1500px;}
+    100% {left:1000px; top:2100px;}
+}
+.libellenOrte{
+    height: 23%;
+    width: 22%;
+}
+
+.libelleGrafik{
+    height: 11%;
+    width: 12%;
+}
+
+.libellenOrt2{
+    height: 13%;
+    width: 12%;
+    margin-left: 90%;
+    margin-top: 1%;
+}
+
+#mail{
+    // color:  #1e7a11 !important;
+    color: white !important;
+}
+
+.libellenOrt3{
+    height: 55%;
+    width: 54%;
+    margin-left: 60%;
+    margin-top: 1%;
+}
+
+.card-title{
+    color:  #1e7a11 !important;
+}
+
+#kindergruppe{
+    color: black;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col {
+        -ms-flex: 20%;
+        flex: 20%;//100%
+        max-width: 50%;
+    }
+    #kindergruppeImg{
+            height: 300px !important;
+    }
+
+    @keyframes libelle{
+        0% {left:0%; top:0%;}
+        20%  {left:80%; top:25%;}
+        40%  {left:0%; top: 50%;}
+        55% {left:60%; top:90%;}
+        70% {left:40%; top:100%;}
+        100% {left:80%; top:120%;}
+    }
+
+    // @keyframes libelle{
+    //     0% {left:0px; top:0px;}
+    //     20%  {left:600px; top:250px;}
+    //     40%  {left:0px; top:450px;}
+    //     55% {left:1000px; top:1100px;}
+    //     70% {left:300px; top:1500px;}
+    //     100% {left:1000px; top:2100px;}
+    // }
+}
+
+@media screen and (max-width: 1170px) {
+    .col {
+        -ms-flex: 50%;
+        flex: 50%;//100%
+        max-width: 50%;
+    }
+
+    @keyframes libelle{
+        0% {left:0px; top:0px;}
+        10%  {left:180px; top:130px;}
+        20%  {left:0px; top: 250px;}
+        35% {left:160px; top: 550px;}
+        40% {left:40px; top: 630px;}
+        50% {left:190px; top:1050px;}
+        60% {left:40px; top:1250px;}
+        70% {left:300px; top:1730px;}
+        80% {left:490px; top:2000px;}
+        100% {left:30px; top:2050px;}
+    }
+
+    .libelleGrafik{
+        height: 14%;
+        width: 16%;
+    }
+
+    #libelle{
+        animation-name: libelle;
+        animation-duration: 20s;
+        animation-iteration-count: 3;
+        // animation: slide;
+        // width: 100px;
+        // height: 100px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .col {
+        -ms-flex: 90%;
+        flex: 90%;//100%
+        max-width: 90%;
+        margin-left:5%;
+        margin-right: 5%;
+    }
+
+
+    @keyframes libelle{
+        0% {left:0px; top:0px;}
+        20%  {left:180px; top:130px;}
+        40%  {left:0px; top: 250px;}
+        55% {left:160px; top: 550px;}
+        70% {left:40px; top: 630px;}
+        100% {left:190px; top:1050px;}
+    }
+
+    .libelleGrafik{
+        height: 20%;
+        width: 22%;
+    }
+
+    #libelle{
+        animation-name: libelle;
+        animation-duration: 20s;
+        animation-iteration-count: 1;
+        // animation: slide;
+        // width: 100px;
+        // height: 100px;
+        position: relative;
+    }
+}

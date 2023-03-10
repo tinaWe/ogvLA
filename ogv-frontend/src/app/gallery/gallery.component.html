@@ -1,0 +1,40 @@
+<!-- Modal gallery -->
+<div id="gallery" class="container pt-8 mb-8 sticky">  
+  <section class="">
+    <div class="gallery">
+      <!-- Section: Year xx --> 
+      <div  class="d-flex flex-wrap flex-row align-items-center"> 
+        <div *ngFor="let gallery of galleryOverview$ | async; let i = index; let count = count;" > <!-- *ngFor="let item of  slides;  let i = index"  *ngFor="let item of slides | async; let i = index" *ngFor="let Card of cardShown$ | async; let i = index" [cardShown$]="Card"-->       
+              <section class="">     
+                <div class="row p-3 flex-row " id="row">  <!--row x row-cols-4 row-cols-md-1 mb-3 = anpassen-->
+                  <h4 class="year">{{gallery.year}}</h4> 
+                  <div class="col">
+                          <!-- <div *ngFor="let image of imageGallery$; let i = index; let count = count;" > -->
+                              <!-- <div class="col-lg-4 col-md-12 mb-4 mb-lg-0"> -->
+                                <div class="hover-overlay ripple shadow-1-strong rounded"
+                                  data-ripple-color="light"  id="card"> <!--daten ins modal  [gallery]="Gallery" class="w-100" übergeben-->
+                                    <!-- <img [src]="'data:image/jpg;base64,'+BufferToBase64($imageGallery.image.data)" alt="" />   -->
+                                    <!-- <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div> -->   
+                                    <!-- <div *ngFor="let image of imageGallery$; let i = index;" >  -->
+                                    <a class="link" routerLink="['/slideshow', gallery.id]" (click)="goToSlideshow(gallery.id)" >
+                                    <img [src]="'data:image/jpg;base64,'+BufferToBase64(gallery.image.data)" alt="" class="frontBilder"/> 
+                                    </a>
+                                    <!-- <img [src]="$imageGallery.image.data|image|async" alt="" class="frontBilder"> -->
+                                    <!-- <img [src]="$convertedImage.image" alt="" class="frontBilder"> -->
+                                    <!-- [imageGallery$]="image" -->
+                                    <!-- </div> -->
+                            <div class="name">
+                              <button  type="button" class="btn btn-link" routerLink="['/slideshow', gallery.id]">{{gallery.name}}</button>            
+                              <!--(click)="openModal(i)"-->
+                            </div>   
+                        </div>
+                    </div> 
+                  </div>
+              </section>
+            </div>
+        </div>
+      <!-- Section: Images -->
+    </div>
+  </section>
+</div>
+  <!-- Modal gallery -->

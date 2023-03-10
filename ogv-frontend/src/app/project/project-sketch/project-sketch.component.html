@@ -1,0 +1,16 @@
+<!-- SwiperCore.use([Pagination, Navigation]); -->
+
+<swiper #swiperRef
+[slidesPerView]="1"
+[centeredSlides]="true"
+[spaceBetween]="10"
+[pagination]="{type: 'fraction'}"
+[navigation]="true"
+class="mySwiper">
+<!-- <div class="swiper-wrapper"> -->
+    <!-- Wenn ich virtual rausnehme aber encapslation rein, es funktioniert-->
+    <ng-container *ngFor="let image of images$; let i = index;" >
+    <ng-template swiperSlide><img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)" alt=""/></ng-template>
+    </ng-container>
+<!-- </div> -->
+</swiper>

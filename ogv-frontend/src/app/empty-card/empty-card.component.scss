@@ -1,0 +1,33 @@
+.card{
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.card-body{
+    display: flex;
+    align-items: stretch;
+    flex-flow: column;
+    justify-content: flex-start;
+    // align-items: ;
+}
+
+input{
+    border: none;
+    border-bottom: 0.5;
+    word-break: break-word;
+}
+input ::placeholder{
+    opacity: 0.5;
+    font-style: italic;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+
+img{
+    height: 10rem;
+}

@@ -1,0 +1,44 @@
+
+            <!-- ////////////////////////////////////////////////////////////////////////////////// -->
+             <!-- <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img> -->
+<div class="card" style="width: 20rem; height: 40rem;"> <!--38rem-->
+    <form (submit)="submitCard()"> <!---->
+        <img
+        src="../../assets/img/background3.jpg"
+        class="card-img-top"
+        alt="..."
+        />
+        <div class="card-body">
+            <h5 class="card-title">
+                <input  placeholder="Überschrift" name="titleCard" [(ngModel)]="card$.title"  (ngModelChange)="card$.title = $event">
+            </h5>
+            <div class="card-text">
+                <mdb-form-control>
+                <textarea type="text" class="form1" class="md-textarea form-control" name="beschreibungCard"  [(ngModel)]="card$.beschreibung" (ngModelChange)="card$.beschreibung = $event" rows="4" mdbInput></textarea>
+                <label mdbLabel class="form-label" for="form1">Beschreibung einfügen</label>
+                </mdb-form-control>
+            </div>
+
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Datum:
+                <input type="text" placeholder="Datumsfeld" name="datumCard" [(ngModel)]="card$.datum" (ngModelChange)="card$.datum = $event"> </li>
+            <li class="list-group-item" >Treffpunkt:
+                <input type="text" placeholder="Veranstaltungs- oder Treffpunkt:" name="treffpunktCard" [(ngModel)]="card$.ort" (ngModelChange)="card$.ort = $event"> 
+            </li>
+            <li class="list-group-item"> Link:
+                <input type="url" placeholder="Link" name="linkCard" [(ngModel)]="card$.link"> </li>
+            <li class="list-group-item">Kontaktperson:
+                <input type="text" placeholder="Veranstalter mit Kontaktdaten" name="kontaktPersonCard" [(ngModel)]="card$.veranstalter"> </li>
+            <li class="list-group-item">
+                <div class="row row-cols-1 row-cols-md-3">
+                    <a class="btn btn-primary" (click)="safeCard()" style="background-color: #218ccf; width: 7.5rem; margin-right: 0.5rem;" role="button">
+                    Speichern</a>
+
+                    <a class="btn btn-primary" style="background-color: #630808; width: 7.5rem;" role="button" (click)="deleteCard()"
+                    >Löschen</a> <!--(click)="deleteCard($event)" -->
+                </div>
+            </li>
+            </ul>
+        </div>
+    </form>
+</div>

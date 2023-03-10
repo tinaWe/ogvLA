@@ -1,0 +1,41 @@
+             
+             <div class="newProject">
+                <div class="body container  mb-5">
+                  <h5>
+                 Projekt anlegen</h5>
+                  <div id="collapseProjectErzeugen">
+                    <div class="align-items-start mb-3" id="projText">
+                        <div class="col" id="bescheibungPro">
+                            <p>Mit diesem Fomular können sie neue Projekte für den OGV Lauterhofen erzeugen. 
+                                Füllen Sie dazu alle angegebenen Felder aus und drücken Sie anschließend den Button "Speichern", um
+                                das neue Projekt zu speichern und zu veröffentlichen. Das neue Projekt erscheind anschließend
+                                im Register Projekte unter dem angegebenem Jahr. Bitte beachten Sie, wenn Sie das Projekt einmal gespeicher haben
+                                so können Sie es nur noch Löschen aber nicht mehr verändern.
+                                <br>
+                            </p>
+
+                            <div class="pb-2"> Überschrift des Projektes:
+                                <input type="text" placeholder="Überschrift" [(ngModel)]="projectName" name="projectName"> <!--[(ngModel)]="card$.title"  -->
+                            </div>
+                            <div class="pb-4"> Tag  der  Veranstaltung:
+                                    <input type="text" placeholder="Jahr" type="date" [(ngModel)]="projectDate" name="projectDate">
+                            </div>
+
+                            <div class="pb-4">
+                                <mdb-form-control>
+                                <textarea type="text" id="form1" class="md-textarea form-control"  rows="4" mdbInput [(ngModel)]="projectBeschreibung" name="projectBeschreibung"></textarea>
+                                <label mdbLabel class="form-label" for="form1">Beschreibung einfügen</label>
+                                </mdb-form-control>
+                            </div>
+                            <a class="btn btn-primary"  style="background-color: #218ccf; width: 7.5rem; margin-right: 0.5rem;" role="button" (click)="addProject()"> <!--(click)="safeProject($event)"-->
+                                Speichern</a>
+                        </div>
+                        <div class="col" style="margin-top: 0;" id="bilderProj">
+                            <app-dropzone></app-dropzone>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+            

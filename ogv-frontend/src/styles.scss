@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+// .carousel-control-prev-icon, .carousel-control-prev {
+//     position: absolute;
+//     bottom: 160px;
+//     left: -25px;
+//     width: 2px;
+// }
+
+// .carousel-control-next-icon, .carousel-control-next{
+//     position: absolute;
+//     bottom: 160px;
+//     right: -7px;
+//     width: 5px;
+// }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

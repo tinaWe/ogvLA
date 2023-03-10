@@ -1,0 +1,41 @@
+// #tableTest{
+//     justify-content: center;
+//     // text-align: center !important;
+//     // align-items: center;
+// }
+
+.tableAusleihe{
+    width: 50%;
+    margin: auto;
+}
+
+
+.table-hover tbody tr:hover {  
+        background-color: rgba(#1e7a11, 0.5);
+}
+
+#geraeteausleihe{
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    // .column {
+    //     -ms-flex: 20%;
+    //     flex: 20%;//100%
+    //     max-width: 50%;
+    // }
+
+    #geld{
+        margin-left: 5%;
+    }
+
+    .tableAusleihe{
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 15%;
+    }
+    #geraeteImg{
+            height: 300px !important;
+    }
+
+}

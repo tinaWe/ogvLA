@@ -1,0 +1,20 @@
+    <!--Background Image-->
+
+    <div id="projekte" class="container pt-5 mb-5 sticky">  
+        <div  class="container pt-5">    
+            <div *ngFor="let project of projekts$ | async; let i = index; let count = count">
+                    <h4 class="text-uppercase" class="scroll">{{project.year}}</h4>
+                    <div class="row d-flex clearfix align-items-start bg-light mb-3 gx-5">
+                        <h5> {{project.title}}</h5>
+                        <ng-container>
+                            <div class="col">
+                                <app-picture-ogvprojekt [id$]="project.idProjekt"></app-picture-ogvprojekt>
+                            </div>
+                            <div class="col justify-content-center align-items-center">      
+                                <p> {{project.beschreibung}} </p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>  
+        </div>
+    </div>  

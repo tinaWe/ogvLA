@@ -1,0 +1,180 @@
+
+             <div class="newProject">
+                <div class="body container  mb-5" style="margin-top: 28px;">
+                    <a
+                    role="button"
+                    (click)="basicCollapse.toggle()"
+                    aria-controls="collapseProjectErzeugen">
+                    <!--   [attr.aria-expanded]="!basicCollapse.collapsed" -->
+                  <h5>
+                  <i *ngIf="!basicCollapse.collapsed" class="fas fa-angle-down"></i>
+                  <i *ngIf="basicCollapse.collapsed" class="fas fa-angle-right"></i>
+                  Übersicht aller Projekt</h5>
+                  </a>
+                  <div id="collapseProjectErzeugen" mdbCollapse #basicCollapse="mdbCollapse" [collapsed]="false">
+                            <p>In dieser Tabelle werden alle Projekte der Webseite angezeigt. Sie verfügen über
+                                die Möglichkeit ein Projekt auszuwählen und zu löschen.
+                                <br>
+                            </p>
+                        <!-- Manuelle Tabelle, die es nun Flexibel gestalten zu gilt tickyHeader="true" mdbTableScroll scrollY="true" id="tableProjekt"
+                                    scrollX="false" maxHeight="800" stickyHeaderBgColor="rgb(66,133,244)" stickyHeaderTextColor="#ffffff"-->
+                        <div class="container">
+                              <div class="input-group rounded mb-4">
+                                <input 
+                                    type="text"
+                                       id="search-box"
+                                       class="form-control"
+                                       [(ngModel)]="searchItem" 
+                                       placeholder="Suche dein Projekt"/>
+                                <button class="btn btn-primary"  id="search-box"  type="button" id="button-addon1" title="search">
+                                    <i class="fa fa-search"></i>
+                                  </button>
+                                  <!-- id="advanced-search-button" -->
+                            </div>   
+                            <div class="force-overflow">
+                                <div class="scrollbar-dusty-grass square thin table-wrapper-scroll-y my-custom-scrollbar">
+                                    <table class="table align-middle mb-3 bg-white" id="projektTable">
+                                        <!-- *ngFor="let item of list;  let i = index" -->
+                                        <thead class="bg-light" style="position:sticky !important;">
+                                            <tr>
+                                                <th class="nameProjekth">Name</th>
+                                                <th class="dateProjekth">Datum</th>
+                                                <th class="beschreibungProjekth">Beschreibung</th>
+                                                <!-- <th class="bilderProjekth">Bilder</th> -->
+                                                <th class="deleteProjekth">Löschen</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr *ngFor="let projekt of $projekt|filter:searchItem;   let i = index">
+                                                    <!-- *ngFor="let projekt of item;   let projektIndex = index"  (load)="firstProjekts()" -->
+                                                    <td class="nameProjekt">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ms-3">
+                                                            <p class="fw-bold mb-1">{{projekt.title}}</p>
+                                                            <p class="text-muted mb-0">Titel</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td  class="dateProjekt">
+                                                        <span class="badge badge-success rounded-pill d-inline">{{projekt.year}}</span>
+                                                        <p class="fw-normal mb-1">{{projekt.datum}}</p>
+                                                    </td>
+                                                    <td class="beschreibungProjekt">
+                                                        <p class="fw-normal mb-1">{{projekt.beschreibung}}</p>
+                                                        <!-- <p class="text-muted mb-0">{{projekt.beschreibung}}</p> -->
+                                                    </td>
+                                                    <!-- <td class="bilderProjekt">
+                                                        <div class="d-flex align-items-center">
+                                                            <img
+                                                                src="../../assets/img/kuerbis_2012.PNG"
+                                                                alt=""
+                                                                style="width: 125px; height: 85px"
+                                                                class="img-fluid rounded"
+                                                                />
+                                                                <div class="ms-3">
+                                                                </div>
+                                                        </div>
+                                                    </td> -->
+                                                    <td class="deleteProjekt">
+                                                        <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="deleteProjekt(projekt.id)">
+                                                            Löschen
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>    
+                                    </table>
+                                </div>   
+                            </div>
+                            </div>
+                             <!-- <div class="d-flex justify-content-right mt-2">
+                                <ul class="pagination justify-content-end">
+                                <li class="page-item" ><a class="page-link" href="/internerBereich">Previous</a></li>
+                                <li class="page-item active" ><a class="page-link" href="/internerBereich">1</a></li>
+                                <li class="page-item "><a class="page-link" href="/internerBereich">2</a></li>
+                                <li class="page-item"><a class="page-link" href="/internerBereich">3</a></li>
+                                <li class="page-item"><a class="page-link" href="/internerBereich">Next</a></li>
+                              </ul>
+                            </div>  -->
+
+                            <!-- Pagination try -->                         
+                         </div>                         
+                    </div>
+                </div>
+
+                <script>
+                        var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+                            Ps.initialize(myCustomScrollbar);
+
+                            var scrollbarY = myCustomScrollbar.querySelector('.ps.ps--active-y>.ps__scrollbar-y-rail');
+
+                            myCustomScrollbar.onscroll = function() {
+                                scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;  
+                            }
+
+                        // const data = {
+                        // columns: [
+                        //     { label: 'Name', field: 'name' },
+                        //     { label: 'Position', field: 'position' },
+                        //     { label: 'Office', field: 'office' },
+                        //     { label: 'Age', field: 'age' },
+                        //     { label: 'Start date', field: 'date' },
+                        //     { label: 'Salary', field: 'salary' },
+                        // ],
+                        // rows: [
+                        //     ['Tiger Nixon', 'System Architect', '	Edinburgh', 61, '2011/04/25', '$320,800'],
+                        //     ['Sonya Frost', 'Software Engineer', 'Edinburgh', 23, '2008/12/13', '$103,600'],
+                        //     ['Jena Gaines', 'Office Manager', 'London', 30, '2008/12/19', '$90,560'],
+                        //     ['Quinn Flynn', 'Support Lead', 'Edinburgh', 22, '2013/03/03', '$342,000'],
+                        //     ['Charde Marshall', 'Regional Director', 'San Francisco', 36, '2008/10/16', '$470,600'],
+                        //     ['Haley Kennedy', 'Senior Marketing Designer', 'London', 43, '2012/12/18', '$313,500'],
+                        //     ['Tatyana Fitzpatrick', 'Regional Director', 'London', 19, '2010/03/17', '$385,750'],
+                        //     ['Michael Silva', 'Marketing Designer', 'London', 66, '2012/11/27', '$198,500'],
+                        //     ['Paul Byrd', 'Chief Financial Officer (CFO)', 'New York', 64, '2010/06/09', '$725,000'],
+                        //     ['Gloria Little', 'Systems Administrator', 'New York', 59, '2009/04/10', '$237,500'],
+                        // ],
+                        // };
+
+                        // const advancedSearchInstance = new Table(document.getElementById('projektTable'), projekte)
+
+                        // const advancedSearchInput = document.getElementById('advanced-search-input');
+
+                        // const search = (value) => {
+
+                        // let [phrase, columns] = value.split(' in:').map((str) => str.trim());
+
+                        // if (columns) {
+                        //     columns = columns.split(',').map((str) => str.toLowerCase().trim());
+                        // }
+
+                        // advancedSearchInstance.search(phrase, columns);
+                        // }
+
+                        // document.getElementById('advanced-search-button').addEventListener('click', (e) => search(advancedSearchInput.value));
+
+                        // advancedSearchInput.addEventListener('keydown', e => {
+                        // if (e.keyCode === 13) search(e.target.value);
+                        // })
+
+                        document.getElementById("search-box")
+                                .addEventListener("keyup", function () {
+                                let input, filter, tab, td, a, i, txtValue;
+                                input = document.getElementById("search-box");
+                                filter = input.value.toUpperCase();
+                                tab = document.getElementById("projektTable");
+                                td = tab.getElementsByTagName("td");
+
+                                // Loop through all list items, and hide those who don't match the search query
+                                for (i = 0; i < li.length; i++) {
+                                    a = li[i].getElementsByTagName("p")[0];
+                                    txtValue = a.textContent || a.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    td[i].style.display = "";
+                                    } else {
+                                    td[i].style.display = "none";
+                                    }
+                                }
+                                });
+                   
+                </script>
+            
+         

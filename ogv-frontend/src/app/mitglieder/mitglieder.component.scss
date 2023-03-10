@@ -1,0 +1,68 @@
+a:hover, a:focus{
+    color:  #1e7a11 !important;
+}
+
+#mitglied{
+    color: black;
+}
+
+#vorstandImg{
+    width: 70%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 20%;
+        flex: 20%;//100%
+        max-width: 50%;
+    }
+    #mitgliederImg{
+            height: 300px !important;
+    }
+
+    #vorstandImg{
+        height: 25% !important;
+    }
+
+    .card{
+        // width:95%;
+        height: 25% !important;
+        margin-bottom: 10%;
+    }
+
+    .card-img-top{
+        height: 20% !important;
+    }
+
+}
+
+@media screen and (max-width: 1040px) {
+    .column {
+        -ms-flex: 20%;
+        flex: 20%;//100%
+        max-width: 50%;
+    }
+    #mitgliederImg{
+            height: 400px !important;
+    }
+
+    #vorstandImg{
+        height: 25% !important;
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 2.5%;
+    }
+
+    .card{
+        // width:95%;
+        height: 25% !important;
+        margin-bottom: 10%;
+    }
+
+    .card-img-top{
+        height: 20% !important;
+    }
+
+}

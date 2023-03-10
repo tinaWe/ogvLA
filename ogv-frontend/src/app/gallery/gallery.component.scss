@@ -1,0 +1,99 @@
+.gallery{
+    width: 90%;
+    margin:auto;
+    margin-top: 10%;
+}
+
+#card{
+    width: 90%;
+}
+
+pt-5{
+    margin: auto;
+}
+
+.row{
+    margin-top: 4%;
+    cursor: pointer;
+}
+
+#firstrow{
+    margin-top: 5% !important;
+    cursor: pointer;
+}
+
+.frontBilder{
+    height: 160px;
+    width: 100%;
+    border-radius: 2.5px;
+}
+
+.hover-shadow:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2) ; //funktioniert noch nicht
+  }
+
+.btn{
+    background-color: white;
+    border-color: white;
+    color: black;
+    background-blend-mode: normal;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size:large;
+    color: #249315;
+    
+}
+
+.year{
+    font-weight: bold;
+    margin-left: 4%;
+    font-size:x-large;
+    color:#1e7a11;
+}
+
+@media (max-width: 988px) {
+    /* #collapse navbar-collapse  {
+      right: 2px !important;
+      height: 600px;
+    } */
+    img{
+        height: 40vh; //muss noch an die verschiedenen bildschirm größen angepasst werden
+    }    
+
+    .titel{
+        font-size: x-large;
+    }
+    // #lastItem{
+    //       /* visibility: hidden; */
+    //       display:none;   
+    //     }
+    // /* .navbar-nav{
+    //          padding: 70px 0;
+    //           padding: 1%;
+    //           margin-right: 10px !important;
+    //     } */
+    //     .navbar-expand-lg {
+    //           flex-direction: column-reverse;
+    //         }
+    //         #navbarNavDropdown{flex-grow:0;}
+
+    //     .navbar-nav {
+    //       height: 100%; /* 100% Full-height */
+    //       width: 20%; /* 0 width - change this with JavaScript */
+    //       position: fixed; /* Stay in place */
+    //       z-index: 1; /* Stay on top */
+    //       top: 8.5%;
+    //       right: 0;
+    //       background-color: white; /* Black*/
+    //       overflow-x: hidden; /* Disable horizontal scroll */
+    //       padding-top: 60px; /* Place content 60px from the top */
+    //       transition: 0.5s;
+    //       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    //       text-align: left; 
+    //           /* To-Do:
+    //              Hauptseite erstellen*/
+            // }
+  }

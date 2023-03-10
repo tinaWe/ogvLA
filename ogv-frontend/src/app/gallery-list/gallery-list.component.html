@@ -1,0 +1,122 @@
+
+             <div class="newGallery">
+                <div class="body container" style="margin-top: 28px;">
+                    <a
+                    role="button"
+                    (click)="basicCollapse.toggle()"
+                    aria-controls="collapseGalleryErzeugen">
+                        <!-- [attr.aria-expanded]="!basicCollapse.collapsed" -->
+                  <h5>
+                  <i *ngIf="!basicCollapse.collapsed" class="fas fa-angle-down"></i>
+                  <i *ngIf="basicCollapse.collapsed" class="fas fa-angle-right"></i>
+                  Übersicht aller Galerien</h5>
+                  </a>
+                  <div id="collapseGalleryErzeugen" mdbCollapse #basicCollapse="mdbCollapse" [collapsed]="false">
+                            <p>In dieser Tabelle werden alle Galerien der Webseite angezeigt. Sie verfügen über
+                                die Möglichkeit eine Gallerie auszuwählen und zu löschen.
+                                <br>
+                            </p>
+                        <!-- Manuelle Tabelle, die es nun Flexibel gestalten zu gilt tickyHeader="true" mdbTableScroll scrollY="true" id="tableProjekt"
+                                    scrollX="false" maxHeight="800" stickyHeaderBgColor="rgb(66,133,244)" stickyHeaderTextColor="#ffffff"-->
+                        <div class="container">
+                              <div class="input-group rounded mb-4">
+                                <input 
+                                    type="text"
+                                       id="search-box2"
+                                       class="form-control"
+                                       [(ngModel)]="searchItem" 
+                                       placeholder="Suche deine Veranstaltung"/>
+                                <button class="btn btn-primary"  id="search-box"  type="button" id="button-addon1" title="search2">
+                                    <i class="fa fa-search"></i>
+                                  </button>
+                                  <!-- id="advanced-search-button" -->
+                            </div>   
+                            <div class="force-overflow">
+                                <div class="scrollbar-dusty-grass square thin table-wrapper-scroll-y my-custom-scrollbar">
+                                    <table class="table align-middle mb-3 bg-white" id="galleryTable">
+                                        <!-- *ngFor="let item of list;  let i = index" -->
+                                        <thead class="bg-light" style="position:sticky !important;">
+                                            <tr>
+                                                <th class="nameGalleryh">Name</th>
+                                                <th class="dateGalleryh">Datum</th>
+                                                <th class="bilderGalleryh">Bilder</th>
+                                                <th class="deleteGalleryh">Löschen</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr *ngFor="let gallery of $gallery|filter:searchItem;   let i = index">
+                                                    <!-- *ngFor="let projekt of item;   let projektIndex = index"  (load)="firstProjekts()" -->
+                                                    <td class="nameGallery">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ms-3">
+                                                            <p class="fw-bold mb-1">{{gallery.name}}</p>
+                                                            <p class="text-muted mb-0">Titel</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td  class="dateGallery">
+                                                        <span class="badge badge-success rounded-pill d-inline">Jahr</span>
+                                                        <p class="fw-normal mb-1">{{gallery.year}}</p>
+                                                    </td>
+                                                    <td class="bilderGallery">
+                                                        <div class="d-flex align-items-center">
+                                                            <img
+                                                                src="../../assets/img/kuerbis_2012.PNG"
+                                                                alt=""
+                                                                style="width: 125px; height: 85px"
+                                                                class="img-fluid rounded"
+                                                                />
+                                                                <div class="ms-3">
+                                                                    <!-- <p class="fw-bold mb-1"> {{projekt.bilder}}</p> -->
+                                                                </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="deleteGallery">
+                                                        <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="deleteGallery(gallery.id)">
+                                                            Löschen
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>    
+                                    </table>
+                                </div>   
+                            </div>
+                            </div>                       
+                         </div>                         
+                    </div>
+                </div>
+
+                <script>
+                        var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+                            Ps.initialize(myCustomScrollbar);
+
+                            var scrollbarY = myCustomScrollbar.querySelector('.ps.ps--active-y>.ps__scrollbar-y-rail');
+
+                            myCustomScrollbar.onscroll = function() {
+                                scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;  
+                            }
+
+                    
+                        document.getElementById("search-box2")
+                                .addEventListener("keyup", function () {
+                                let input, filter, tab, td, a, i, txtValue;
+                                input = document.getElementById("search-box2");
+                                filter = input.value.toUpperCase();
+                                tab = document.getElementById("galleryTable");
+                                td = tab.getElementsByTagName("td");
+
+                                // Loop through all list items, and hide those who don't match the search query
+                                for (i = 0; i < li.length; i++) {
+                                    a = li[i].getElementsByTagName("p")[0];
+                                    txtValue = a.textContent || a.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    td[i].style.display = "";
+                                    } else {
+                                    td[i].style.display = "none";
+                                    }
+                                }
+                                });
+                   
+                </script>
+            
+         

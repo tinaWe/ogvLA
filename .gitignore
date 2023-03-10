@@ -8,6 +8,9 @@ node_modules/
 /.devcontainer
 *.code-workspace
 
+#Angular
+/ogv-frontend/.angular/**
+
 # Vim
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
@@ -51,6 +54,7 @@ build/config\.gypi
 *.js_
 *.js.deps
 *.js.map
+*.pack
 
 .DS_STORE
 

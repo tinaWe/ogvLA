@@ -1,0 +1,23 @@
+<div class="card" style="width: 22rem;">
+    <img
+    src="../../assets/img/background3.jpg"
+    class="card-img-top"
+    alt="..."
+    />
+    <!-- Bild muss noch variable hinzugefügt werden-->
+    <div class="card-body">
+        <h5 class="card-title">Veranstaltung & Neuigkeiten:<br>
+            {{card$.title}}
+        </h5>
+        <div class= "card-text">
+            <p>{{card$.beschreibung}}</p>
+        </div>
+        <div class="align-items-left">
+            <ul class="list-group align-items-left list-group-light list-group-small">
+                <li class="list-group-item align-items-left">Datum: <br>{{card$.datum}} </li>
+                <li class="list-group-item" >Treffpunkt: <br>{{card$.ort}} </li>
+                <li class="list-group-item">Kontaktperson:<br> {{card$.veranstalter}}</li>
+            </ul>
+    </div>
+    </div>
+</div>

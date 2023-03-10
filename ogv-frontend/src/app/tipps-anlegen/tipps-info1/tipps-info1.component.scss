@@ -1,0 +1,37 @@
+@media screen and (max-width: 570px) {
+    .card-body{
+        width: 100%;
+    }
+
+    #bilderTipp1{
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    .card{
+        height: 600px;
+    }
+
+    #safe1{
+        margin-top: 7%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+
+    .card-body{
+        width: 100%;
+    }
+
+    #bilderTipp1{
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    .card{
+        height: 500px; 
+    }
+
+}

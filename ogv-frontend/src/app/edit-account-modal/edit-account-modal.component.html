@@ -1,0 +1,36 @@
+<div id="modalEdit">
+<div class="modal-header">
+    <h5 class="modal-title" id="modalEditAccount">Bearbeiten des Kontos</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRefEditAccount.close()"
+    ></button>
+</div>
+  <div class="modal-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Name:
+                <input  type="text" placeholder="Name" name="testNAme"
+                 [(ngModel)]="accountEdit$.name"  
+                 (ngModelChange)="accountEdit$.name = $event"/></li>
+            <li class="list-group-item" >Email:
+                <input  type="email" placeholder="Mail"  [(ngModel)]="accountEdit$.email" (ngModelChange)="accountEdit$.email = $event">
+            </li>
+            <li class="list-group-item">Passwort:
+                <input type="password" placeholder="erste Passwortvergabe" [(ngModel)]="accountEdit$.password" (ngModelChange)="accountEdit$.password = $event"> 
+            </li>
+            <li class="list-group-item">Position:
+                <input type="text" placeholder="Aufgabe im OGV"  required [(ngModel)]="accountEdit$.position" (ngModelChange)="accountEdit$.position= $event"> 
+            </li>
+        </ul>
+        <!--[ngModel]="(accountEdit | async)?.email" [ngModelOptions]="{standalone: true}"(ngModelChange)="accountEdit.name = $event" -->
+    <!--name="emailEditAccout" name="passwortEditAccout" name="positionEditAccout"-->
+    </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="safeEditAccount()">Speichern</button>
+    <button type="button" class="btn btn-danger" (click)="deleteEditAccount()">
+        Löschen
+    </button>
+  </div>
+</div>

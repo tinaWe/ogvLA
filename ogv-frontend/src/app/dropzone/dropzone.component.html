@@ -1,0 +1,58 @@
+<div class="container align-items-center" appDnd (fileDropped)="onFileDropped($event)">
+    <p style="text-align: left;">Hinzufügen von Bildern</p>
+    <div class="d-flex align-items-center mb-3"> <!---->
+        <div class="col">
+            <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+            <img src="../../assets/img/ic-upload-file.svg" alt="" width="45px">
+            <h3>Drag & Drop Dateien hier</h3>
+        </div>
+        <div class="col" style="text-align: center;">
+            <h3>ODER</h3>
+        </div>
+        <div class="col">
+            <label for="fileDropRef">Dateiexplorer</label>
+        </div>
+  </div>
+  <div class="files-list" >
+      <div class="single-file" *ngFor="let file of files; let i = index">
+      <img src="../../assets/img/ic-file.svg" width="45px" alt="file">
+      <div class="info">
+        <h4 class="name">
+          {{ file?.name }}
+        </h4>
+        <p class="size">
+          {{ formatBytes(file?.size) }}
+        </p>
+        <app-progress [progress]="file?.progress"></app-progress>
+      </div>
+      <img src="../../assets/img/ic-delete-file.svg" class="delete" width="20px" alt="file" (click)="deleteFile(i)">
+    </div>
+  </div>
+  
+<!--  style="height: 100px; overflow-y: auto"
+  <mdb-carousel-item *ngFor="let item of slides; let i = index">
+    <div class="row row-cols-1 row-cols-md-3">
+    <div class="col pb-2"  [ngClass]="{'d-none d-md-block': cardIndex !== 0}" 
+        *ngFor="let Card of item; let cardIndex = index"> 
+            <div class="card-elemente">
+              <app-empty-card (ping)="update($event)" [card$]="Card"></app-empty-card> 
+          </div>
+    </div> -->
+
+<!-- Original Zustand:
+      <div class="files-list">
+    <div class="single-file" *ngFor="let file of files; let i = index">
+      <img src="../../assets/img/ic-file.svg" width="45px" alt="file">
+      <div class="info">
+        <h4 class="name">
+          {{ file?.name }}
+        </h4>
+        <p class="size">
+          {{ formatBytes(file?.size) }}
+        </p>
+        <app-progress [progress]="file?.progress"></app-progress>
+      </div>
+      <img src="../../assets/img/ic-delete-file.svg" class="delete" width="20px" alt="file" (click)="deleteFile(i)">
+    </div>
+  </div>
+ -->

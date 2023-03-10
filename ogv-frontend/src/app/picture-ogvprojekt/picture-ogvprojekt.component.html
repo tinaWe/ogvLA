@@ -1,0 +1,48 @@
+
+  <!-- <mdb-carousel [controls]="false" [indicators]="true" [animation]="'fade'"> -->
+  <!-- <mdb-carousel #carouselRef [animation]="'fade'" [controls]="true" [indicators]="true"  [keyboard]="true" activeSlide="activeSlideIndex" (activeSlideChange)="activeSlideChange(activeSlideIndex)"> -->
+    <!-- *ngFor="let image of images$ | async; let i=index"  [ngClass]="{'active': i === 1}" -->
+    <!-- <ng-container *ngFor="let image of images$ | async; let i=index" > 
+     <mdb-slide *ngFor="let image of images$ | async; let index=index" [ngClass]="{'active': index == index}">
+        <mdb-carousel-item>
+          <img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)"
+            class="d-block w-100"
+            alt="..." />
+           {{Buffer.from(image.image.data).toString('base64')}}
+       </mdb-carousel-item>
+      </ng-container> 
+    </mdb-slide>
+  </mdb-carousel>-->
+ <!-- <div class="fixed-sn">   -->
+  <!-- Buffer.from(image.image).toString('base64')  src="{{image.image}}" -->
+     <!-- <div class="col-lg-10 ml-auto mr-auto">
+         <mdb-carousel #carouselRef [animation]="'fade'" [controls]="true" [indicators]="true"  [keyboard]="true" activeSlide="activeSlideIndex" (activeSlideChange)="activeSlideChange(activeSlideIndex)"> 
+            <mdb-slide *ngFor="let image of images; let i=index" -[ngClass]="{'active': i === 0}" > <!--[ngClass]="{'active': i === 1}"-->
+              <!-- <mdb-carousel-item> -->
+                <!-- <img [src]="image.url" alt=""> -->
+                <!-- <img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)" alt="" class="d-block w-100"/>  
+              </mdb-carousel-item>
+            </mdb-slide>
+        </mdb-carousel>
+    </div> 
+</div> -->
+ <!-- <a (click)="carouselRef.plusSlide(-1)">Next</a>
+  <a (click)="carouselRef.plusSlide(1)">Prev</a> -->
+
+
+  <!-- Es wird angezeigt aber die Slideshow funktioniert nicht -->
+  <!-- <div id="carouselProject" class="carousel slide" data-mdb-ride="carousel">
+     <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let image of images$ | async; let i = index" [ngClass]="{'active': i === 0}">
+        <img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)" alt="" class="d-block w-100"/>  
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselProject" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span  class="visually-hidden">Next</span>
+    </button>
+  </div>  -->

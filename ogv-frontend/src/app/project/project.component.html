@@ -1,0 +1,63 @@
+    <!--Background Image-->
+   
+<div class="p-5 text-center bg-image" id="projektImg"
+style="background-image: url('../../assets/img/grassRenate.JPG'); height: 500px; width: 100%;">
+    <div class="d-flex mask justify-content-center align-items-center h-100"  style="margin-top: 100px;">
+            <h1 class="mb-3 text-white">Projekte des OGV Lauterhofen</h1>
+    </div>
+</div>
+
+<div id="projekte" class="container pt-5 mb-5 sticky">  
+    <div  class="container pt-5">    
+        <div *ngFor="let project of projekts$ | async; let i = index; let count = count" >
+            <!-- <div class="card"> -->
+                <h4 class="text-uppercase" class="scroll">{{project.year}}</h4>
+                <div class="row d-flex clearfix align-items-start bg-light mb-3 gx-5" id="pContainer">
+                    <h5> {{project.title}}</h5>
+                    <ng-container class="switchOfPositions" *ngIf="i % 2 != 0">
+                        <div class="col">      
+                            <p> {{project.beschreibung}} </p>
+                        </div>
+                        <div class="col" style="width: 50%">
+                            <!--justify-content-center align-items-center-->
+                            <div class="fixed-sn">  
+                            <!-- <app-picture-ogvprojekt [imageId$]="1"></app-picture-ogvprojekt>  -->
+                            <app-project-sketch [id$]="project.id"></app-project-sketch>
+                            <!-- [id$]="project.id" -->
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container class="switchOfPositions" *ngIf="i % 2 == 0">
+                        <div class="col" style="width: 50%">
+                            <div class="fixed-sn">  
+                                <!-- <app-picture-ogvprojekt [imageId$]="project.id"></app-picture-ogvprojekt> -->
+                                <app-project-sketch [id$]="project.id"></app-project-sketch>
+                                <!-- <button (click)="createHelper(project.id)" alt="d" title="d"></button> -->
+                            </div>
+                        </div>
+                        <div class="col">      
+                            <p> {{project.beschreibung}} </p>
+                        </div>
+                    </ng-container>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>  
+
+
+    <!-- <div class="container pt-5">
+        <h4 class="text-uppercase" class="scroll">2010</h4>
+        <div class="row d-flex clearfix align-items-start bg-light mb-3 gx-5">
+            <div class="col">
+                <p>Hier wird der Text der Projekte stehen. Neben an wird die Bildergallerie zu den Aktionen abgebildet sein.
+                    Das Jahr der Projekte Gilt es noch etwas anderes zu Gestalten. 
+                </p>
+            </div>
+            <div class="col justify-content-center align-items-center" > -->
+                <!-- <app-project-picture-gallery data-ride="carousel"></app-project-picture-gallery > -->
+                    <!-- <app-picture-ogvprojekt></app-picture-ogvprojekt>
+            </div>
+        </div>
+     </div>   -->
+        

@@ -1,0 +1,34 @@
+<!-- aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="modalLogIn"  id="modalLogIn"fade-->
+<!-- <div class="modal fade" > -->
+    <!-- <div class="modal-dialog" role="document"> -->
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold" id="text">Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalLogIn.close()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-6">
+                        <div class="md-form mb-3 form-group">
+                            <i class="fas fa-envelope prefix grey-text">   </i>
+                            <input type="email" id="defaultForm-email" class="form-outline" placeholder="Email"  [(ngModel)]="emailLogIn" required>
+                            <label data-error="wrong" data-success="right" for="defaultForm-email" ></label>
+                        </div>
+
+                        <div class="md-form mb-3 form-group">
+                            <i class="fas fa-lock prefix green-text"> </i>
+                            <input type="password" id="defaultForm-pass" class="form-outline validate" [(ngModel)]="passwordLogIn" placeholder="Passwort" required>
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass"></label>
+                        </div>
+
+                        <div class="col mb-2">
+                        </div>
+
+                        <div class= "text-center mb-2">
+                            <!-- routerLink="/internerBereich" routerLinkActive="active"  -->
+                            <button class="btn btn-primary waves-light z-depth-0"  id="loginButton1" style="background-color:#065b0c" (click)="submit()">
+                                Login</button>
+                        </div>
+                </div>
+          </div>
+     <!-- </div> -->

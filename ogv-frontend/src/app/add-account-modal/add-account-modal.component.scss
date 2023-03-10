@@ -1,0 +1,18 @@
+.btn-secondary{
+    background-color: #1e7a11 !important;
+}
+
+input{
+    border: none;
+    border-bottom: 0.5;
+    word-break: break-word;
+    color: #1e7a11 !important;
+}
+input ::placeholder{
+    opacity: 0.5;
+    font-style: italic;
+}
+
+input:focus{
+    outline: none;
+}

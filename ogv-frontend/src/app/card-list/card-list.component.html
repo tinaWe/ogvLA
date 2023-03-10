@@ -1,0 +1,101 @@
+<!-- 
+
+<div class="card-list">
+    <mdb-carousel [controls]="true" id="carouselCard" class="carousel-multi-item carousel-dark multi-animation" data-ride="carousel-multi-item" t
+                    [animation]="'slide'" [keyboard]="true">
+        <mdb-carousel-item  *ngFor="let item of slides; let i = index">
+            <div class="row row-cols-1 row-cols-md-3">
+            <div class="col pb-2"  [ngClass]="{'d-none d-md-block': cardIndex !== 0}" 
+                *ngFor="let Card of item; let cardIndex = index"> 
+                    <div class="card-elemente">
+                      <app-empty-card (ping)="update($event)" [card$]="Card"></app-empty-card> 
+                  </div>
+            </div>
+            </div>
+        </mdb-carousel-item>
+        </mdb-carousel>
+        <button type="button" title="addCard" (click)="createCard($event)" class="btn btn-primary g-4">
+          Neuen Karte<i class="fas fa-plus" style="margin-left: 0.4em;"></i>
+      </button>
+        <button type="button" title="publishCard" (click)="publish($event)"  class="btn btn-primary" style="margin-left: 0.7em" >
+            Veröffentlichen der Änderungen
+    </button>
+</div> -->
+
+
+
+
+<div class="card-list">
+    <!-- <mdb-carousel [controls]="true" id="carouselCard" class="carousel-multi-item carousel-dark multi-animation" data-ride="carousel-multi-item" t
+                    [animation]="'slide'" [keyboard]="true">
+        <mdb-carousel-item  *ngFor="let item of slides ; let i = index">
+            <div class="row row-cols-1 row-cols-md-3">
+            <div class="col pb-2"  [ngClass]="{'d-none d-md-block': cardIndex !== 0}" 
+                *ngFor="let Card of item; let cardIndex = index"> 
+                    <div class="card-elemente">
+                      <app-empty-card (ping)="update($event)" [carda$]="Card"></app-empty-card> 
+                  </div>
+            </div>
+            </div>
+        </mdb-carousel-item>
+        </mdb-carousel> -->
+
+    <div> 
+    <div class="d-flex flex-wrap  mb-4">
+        <ng-container *ngFor="let Card of cards$ | async; let i = index;">
+            <div class="card-elemente">
+                    <div class="mb-auto p-2"> <!---->
+                        <app-empty-card [card$]="Card"></app-empty-card> 
+                    </div>
+            </div>
+        </ng-container>
+      </div>
+      <ng-container *ngIf="(cards$ | async)?.length < 6">
+        <button type="button" title="createCard" (click)="createCard($event)" class="btn btn-primary g-4">
+            Neue Karte erzeugen <i class="fas fa-plus" style="margin-left: 0.4em;"></i>
+        </button> 
+        <p><br></p>
+    </ng-container>
+    <ng-container *ngIf="(cards$ | async)?.length >= 6">
+        <button class="btn btn-info" type="button">Info: Maximale Anzahl von 6 Karten erreicht. Sie müssen eine Karte löschen, um eine neue anzulegen.</button>
+    </ng-container>
+</div>
+<!-- (cards$ | async)?.length -->
+
+    <!-- <mdb-container *ngFor="let Card of cards$ | async; let i = index; let count = count">
+        <mdb-row>
+           <mdb-col>
+              <mdb-card-group deck>
+                <app-empty-card [card$]="Card"></app-empty-card> 
+              </mdb-card-group>
+           </mdb-col>
+        </mdb-row>
+     </mdb-container> -->
+
+
+
+
+    <!-- <mdb-carousel [controls]="true" id="carouselCard" class="carousel-multi-item carousel-dark multi-animation"
+        data-ride="carousel-multi-item"  [animation]="'slide'" [keyboard]="true">
+        mdb-carousel-item *ngFor="let Card of cards | async; let cardIndex = index;"> 
+        <mdb-carousel-item *ngFor="let item of slides; let i = index; let count = count">--> <!--*ngFor="let item of cards$ | async; let i= index"--> 
+           
+           <!-- <div class="row row-cols-1 row-cols-md-3"> *ngIf="split !== null" *ngFor="let car of slide; let i = index;"-->
+                <!-- <div class="col pb-2" *ngFor="let Card of item |async; let cardIndex = index;">
+                    <div class="card-elemente"> -->
+                       <!-- <app-empty-card (ping)="cardService.getCards($event)"  [card$]="Card"></app-empty-card> (ping)="update($event)" -->
+                    <!-- </div>
+                </div>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel> -->
+
+
+
+    <!-- <button type="button" title="addCard" (click)="createCard($event)" class="btn btn-primary g-4">
+          Neuen Karte<i class="fas fa-plus" style="margin-left: 0.4em;"></i>
+      </button>
+        <button type="button" title="publishCard" (click)="publish($event)"  class="btn btn-primary" style="margin-left: 0.7em" >
+            Veröffentlichen der Änderungen
+    </button> -->
+</div>

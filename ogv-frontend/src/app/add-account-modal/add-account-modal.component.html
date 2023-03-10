@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="modalLabelNewAccount">Neues Konto anlegen</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRefAddAccount.close()"
+    ></button>
+  </div>
+  <ng-container>
+  <div class="modal-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Name:
+                <input type="text" placeholder="Name" [(ngModel)]="nameUser" name="nameUser"/> </li>
+            <li class="list-group-item" >Email:
+                <input type="email" placeholder="Mail" [(ngModel)]="email" name="email"/> 
+            </li>
+            <li class="list-group-item">Passwort:
+                <input type="password" placeholder="erste Passwortvergabe" [(ngModel)]="password"  name="password" /> 
+            </li>
+            <li class="list-group-item">Position:
+                <input type="text" placeholder="Aufgabe im OGV" [(ngModel)]="position" name="position" /> 
+                <!--  (ngModelChange)="accountAdd$.position= $event" -->
+            </li>
+        </ul>
+    </div>
+  </ng-container>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="addNewCard()">Speichern</button>
+    <button type="button" class="btn btn-primary" (click)="modalRefAddAccount.close()">
+        Schließen
+      </button>
+  </div>

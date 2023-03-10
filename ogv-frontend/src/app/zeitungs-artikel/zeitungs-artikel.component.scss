@@ -1,0 +1,47 @@
+.zeitung{
+    width: 70%;
+    margin: auto;
+}
+
+h5{
+    color: #3f7238;
+    font-weight: bold;
+}
+
+.artikel1{
+    margin-top: 3%;
+    // width: 50%; height: 60%; margin: auto
+}
+
+.artikel2{
+    margin-top: 12%;
+}
+
+.artikel3{
+    margin-top: 12%;
+}
+
+.artikel4{
+    margin-top: 12%;
+}
+
+.artikel5{
+    margin-top: 12%;
+}
+
+.aufruf{
+    margin-top: 12%;
+    margin-bottom: 12%;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #3f7238;
+    background-color: #4e8d46;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+
+    h4{
+        margin-top: 15%;
+    }
+}

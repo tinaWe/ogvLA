@@ -1,0 +1,33 @@
+
+             <div class="newGallery">
+                <div class="body container  mb-5">
+                  <h5>
+                 Gallerie anlegen</h5>
+                  <div id="collapseGalleryErzeugen">        
+                        <div class="align-items-start mb-3" id="gallText">
+                            <div class="col" id="bescheibungGal">
+                                <p>Mit diesem Fomular können sie eine Gallerie für den OGV Lauterhofen erzeugen. 
+                                    Füllen Sie dazu alle angegebenen Felder aus und drücken Sie anschließend den Button "Speichern", um
+                                    die neue Gallerie zu speichern und zu veröffentlichen. Die neue Gallerie erscheind anschließend
+                                    im Register Gallerie unter dem angegebenem Jahr. Bitte beachten Sie, wenn Sie die Gallerie einmal gespeicher haben
+                                    so können Sie es nur noch Löschen aber nicht mehr verändern.
+                                    <br>
+                                </p>
+                                <div class="pb-2"> Überschrift der Gallerie:
+                                    <input type="text" placeholder="Überschrift"  [(ngModel)]="galleryName" name="galleryName"> <!--[(ngModel)]="card$.title"         -->
+                                </div>
+                                <div class="pb-4"> Jahr  der  Veranstaltung:
+                                        <input type="text" placeholder="YYYY" type="number" min="2020" max="2100" [(ngModel)]="galleryYear" name="galleryYear">
+                                </div>
+                                <a class="btn btn-primary"  style="background-color: #218ccf; width: 7.5rem; margin-right: 0.5rem;" role="button" (click)="addGallery()"> <!--(click)="safeProject($event)"-->
+                                    Speichern</a>
+                            </div>
+                            <div class="col" style="margin-top: 0;" id="bilderGal">
+                                <app-dropzone></app-dropzone>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            

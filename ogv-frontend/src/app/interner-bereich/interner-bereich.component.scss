@@ -1,0 +1,50 @@
+.alle{
+background-image: url('../../assets/img/internerBe.png');
+// background-blend-mode: lighten;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+// #internerBereich{
+//     background-color: rgba(244, 244, 244, 0.9);
+// }
+
+h5{
+    color: black;
+}
+
+#lastItem{
+    margin-block-start: auto;
+    color:  #1e7a11 !important;
+    background-color:  #1e7a11 !important ;
+    position: absolute;
+}
+
+@media screen and (max-width: 970px) {
+    // .col {
+    //     -ms-flex: 90%;
+    //     flex: 90%;//100%
+    //     max-width: 90%;
+    // }
+
+    // [class*="d-flex"] {
+    //     display: inline-block !important;
+    //   }
+
+      #projText{
+        display: inline-block;
+    }
+    
+
+    #bescheibungPro{
+        width: 100%;
+    }
+
+    #bilderProj{
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+}

@@ -1,0 +1,40 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25%;
+}
+
+#logo{
+    height: 40px;
+    width: 40px;
+    left: 2%;
+}
+
+#firstLink{
+    margin-left: 10%;
+}
+
+#lastItem{
+    top: 24%;
+    right:2%;
+    margin-block-start: auto;
+    color:  #1e7a11 !important;
+    position: absolute;
+}
+
+
+.navbar-nav .nav-item:active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color:  #1e7a11 !important;
+}
+
+.nav-link:current{
+    color:  #1e7a11 !important; 
+}
+
+.navbar-nav{
+    /* padding: 70px 0; */
+    padding: 1%;
+}
+

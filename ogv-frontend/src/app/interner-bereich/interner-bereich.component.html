@@ -1,0 +1,84 @@
+
+<div class="alle">
+
+    <div class="container pt-5" id="internerBereich" >
+        <div style="margin-top: 65px;">
+            <div class="row d-flex align-items-start">
+                <div class="col-6">
+                    <h5 class="text-uppercase mb-5" >Möchtest du dich wieder ausloggen?</h5>
+                </div>
+                <div class="col-4">
+                    <button id="login" type="button" class="btn btn-success" (click)="logOut()">Ausloggen</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 65px;">
+            <h5 class="text-uppercase mb-5" >Hinzufügen, Löschen & Aktualisieren der Berechtigungen</h5>
+            <div class="bg-light">
+                <app-uebersicht-konten></app-uebersicht-konten>
+            </div>
+        </div>
+
+        
+
+        <!-- End of Table -->
+
+        <!-- Start of News Bereich -->
+        <div class="newsBearbeitung" style="margin-top: 65px;">
+            <h5 class="text-uppercase mb-4">Hinzufügen, Löschen & Ändern der Neuigkeiten </h5>
+            <app-card-list></app-card-list>
+        </div>
+        <!-- End of News -->
+
+        <!-- Ideen für News -->
+        <!-- 
+            - Eigene Komponente
+                - Inhalte werde in eine Datenbank eingetragen und gespeichert
+                -mit einem Plus Button wird die Methode createNewCard() aufgerufen
+                -es wird eine leere Karte erzeugt die nun vom Kunden gefüllt werden kann
+                - Bild kann hochgeladen werden
+                - Texte gilt es auszufüllen
+                - anschließend muss auf den Button speichern bzw. veröffentlichen gedrückt werden
+                - für jede Karte muss oben rechts in der Ecke eine Lösch funktion möglich sein
+        -->
+            <!-- Start Projekte -->
+            <!-- Auflistung der Events in Ordnern mit +/- funktion 
+                - Auflistung anhand einer Tabelle
+            -->
+
+        <div class="projectBearbeitung" style="margin-top: 65px;">
+            <p><br></p>
+            <h5 class="text-uppercase mb-4">Hinzufügen & Löschen von Tipps & Tricks </h5>
+           <app-tipps-anlegen></app-tipps-anlegen>
+           <app-tipps-list></app-tipps-list>
+        </div>
+        
+        <div class="projectBearbeitung  bg-light" style="margin-top: 65px;">
+            <p><br></p>
+            <h5 class="text-uppercase mb-4">Hinzufügen & Löschen von Projekten </h5>
+            <app-projecte-anlegen></app-projecte-anlegen>
+            <app-project-list></app-project-list>
+        </div>
+        <!-- End Projekte -->
+
+        <!-- Start Gallery -->
+        <div class="galleryBearbeitung bg-light" style="margin-top: 65px;">
+            <div class="bg-light">
+                <p><br></p>
+                <h5 class="text-uppercase mb-4">Hinzufügen & Löschen der Gallerie</h5>
+                <app-galleryanlegen></app-galleryanlegen>
+            </div>
+            <app-gallery-list></app-gallery-list>
+        </div>
+        <!-- Auflistung der Events in Ordnern mit +/- funktion -->
+        <!-- End Gallery -->
+    </div>
+    <div>
+        <p><br><br><br></p>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/mdb.min.js">
+</script>

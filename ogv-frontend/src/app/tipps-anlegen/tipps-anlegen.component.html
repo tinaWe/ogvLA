@@ -1,0 +1,70 @@
+<div id="tippsAnlegen">
+    <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <img
+            src="../../assets/img/styleTipp1.PNG"
+            class="card-img-top"
+            alt="..."
+            />
+            <!-- <button class="btn btn-primary" type="button" id="btn-check1"  ng-model="myVar"  ng-init="myVar = 1">Nut Text</button> -->
+            <!-- <input type="checkbox" mdbCheckbox ng-model="cardStyleOne" id="btn-check1" (checkboxChange)="checkBox(1)" ng-checked=""> 
+            <label for="btn-check1"></label>  -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" [value]="option1"  (click)="cardCheck(1)" checked>
+              <label class="form-check-label" for="exampleRadios1"></label>
+            </div>
+          </div>
+          <div class="col-md">
+            <img
+            src="../../assets/img/tippStyle2.PNG"
+            class="card-img-top"
+            alt="..."
+            />
+            <!-- <button class="btn btn-primary" type="button" id="btn-check2" ng-model="myVar" ng-init="myVar = 2">Text mit Bild</button> -->
+            <!-- <input type="checkbox" mdbCheckbox ng-model="cardStyleTwo" id="btn-check2"  (checkboxChange)="checkBox(2)" > 
+            <label for="btn-check2"></label>  -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" [value]="option2" (click)="cardCheck(2)">
+              <label class="form-check-label" for="exampleRadios2">
+              </label>
+            </div>
+          </div>
+          <div class="col-md">
+            <img
+            src="../../assets/img/tippStyle3.PNG"
+            class="card-img-top"
+            alt="..."
+            />
+            <!-- <input
+                mdbCheckbox
+                type="checkbox"
+                class="btn-check"
+                id="btn-check3"
+                [checked]="true"
+                autocomplete="off"
+                /> -->
+              <!-- <input type="checkbox" mdbCheckbox ng-model="cardStyle" id="btn-check3"  (checkboxChange)="checkBox(3)" > 
+              <label for="btn-check3"></label>  -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" [value]="option3" (click)="cardCheck(3)">
+                <label class="form-check-label" for="exampleRadios3">
+                </label>
+              </div>
+          </div>
+        </div> 
+      <div class="row">
+        <div class="col-md">
+            <div *ngIf="this.option1">
+              <app-tipps-info1></app-tipps-info1>
+            </div>
+            <div *ngIf="this.option2">
+              <app-tipps-info2></app-tipps-info2>
+            </div>
+            <div *ngIf="this.option3">
+              <app-tipps-info3></app-tipps-info3>
+            </div>      
+          </div>
+        </div>
+    </div>
+</div>

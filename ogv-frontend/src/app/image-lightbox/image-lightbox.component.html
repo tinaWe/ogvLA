@@ -1,0 +1,31 @@
+
+  
+  
+<div class="slideshow" class="container pt-5 mb-8"> <!--Slideshow as ownpage-->
+   <div id="imgModal" class="slide-modal">
+      <!-- <span class="close cursor" (click)="closeModal()">&times;</span> -->
+      <div class="slide-modal-content text-center">
+         <!-- <div class="image-row"> -->
+               <div class="imageFirst text-center" *ngFor="let image of $imageGallery; let i = index">
+                  <!-- <img class="images" (load)="firstImage()"
+                  src="{{image.url}}" alt="">  -->
+                  <img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)" (load)="firstImage()" alt="" class="images"/> 
+               </div>
+            <!-- </div> -->
+         
+               <div class="img-slides text-center"  *ngFor="let image of $imageGallery; let i = index">
+                  <!-- <img src="{{image.url}}" alt="" class="images"> -->
+                  <img [src]="'data:image/jpg;base64,'+BufferToBase64(image.image.data)"  alt="" class="images"/> 
+                  <!-- <img [src]="$convertedImage"  alt="" class="images"/>  -->
+               </div>
+      </div> 
+      <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+      <a class="next" (click)="plusSlides(1)">&#10095;</a>
+   </div>
+   <div class="text-center py-3">
+      <button type="button"  routerLink="/galerie"  class="btn-link btn-secondary" data-mdb-dismiss="modal">
+          Zurück gehen
+      </button>
+      <!-- <a class="link" routerLink="/slideshow" routerLinkActive="active"> -->
+   </div>
+</div>

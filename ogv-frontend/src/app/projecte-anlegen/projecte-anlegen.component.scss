@@ -1,0 +1,91 @@
+// input[type=date]{
+//     // outline: none !important;
+//     outline-color: #1e7a11 !important;
+//     width: 100%;
+//     padding: 12px 20px;
+//     margin: 8px 0;
+//   }
+
+input[type=text]:focus, input[type=date]:focus{
+    // box-sizing: border-box;
+    border: 1px solid ;
+    border-color: blue !important; 
+    outline-color: blue !important;
+  }
+
+input[type=text]:focus:not([readonly]) {
+    border-color: 1px solid gray;
+    outline-color: 0 1px 0 0 gray; 
+}
+
+.newProject{
+    color: black;
+    height: 500px;
+}
+
+#projText{
+    display: flex;
+}
+
+@media screen and (max-width: 970px) {
+    // .col {
+    //     -ms-flex: 90%;
+    //     flex: 90%;//100%
+    //     max-width: 90%;
+    // }
+
+    // [class*="d-flex"] {
+    //     display: inline-block !important;
+    //   }
+
+      #projText{
+        display: inline-block;
+    }
+    
+
+    #bescheibungPro{
+        width: 100%;
+    }
+
+    #bilderProj{
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    .newProject{
+        height: 700px; 
+    }
+
+}
+
+@media screen and (max-width: 570px) {
+    // .col {
+    //     -ms-flex: 90%;
+    //     flex: 90%;//100%
+    //     max-width: 90%;
+    // }
+
+    // [class*="d-flex"] {
+    //     display: inline-block !important;
+    //   }
+
+      #projText{
+        display: inline-block;
+    }
+    
+
+    #bescheibungPro{
+        width: 100%;
+    }
+
+    #bilderProj{
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    .newProject{
+        height: 800px;
+    }
+}

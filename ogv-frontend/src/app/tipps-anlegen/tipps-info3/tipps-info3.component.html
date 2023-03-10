@@ -1,0 +1,45 @@
+<script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+
+<div class="card"> <!--38rem-->
+    <!--<form> (submit)="submitCard()"-->
+        <div class="card-body">
+            <h5 class="card-title"> Überschrift: <br>
+                <input  placeholder="Überschrift" name="titleTipps3" [(ngModel)]="titleTipps3">
+            </h5>
+            <div class="card-text">
+                <mdb-form-control>
+                <textarea type="text" id="form1" class="md-textarea form-control" name="beschreibungTipps3"  [(ngModel)]="beschreibungTipps3" rows="4" mdbInput></textarea>
+                <label mdbLabel class="form-label" for="form1">Beschreibung einfügen</label>
+                </mdb-form-control>
+            </div>
+            <div id="editor"></div>
+
+            <div class="row">
+                <div class="col-5">
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Link:
+                        <input type="url" placeholder="Link" name="linkTipps3" [(ngModel)]="linkTipps3"> </li>
+                    </ul>
+                </div>
+                <div class="col-2" id="bilderTipp">
+                    <app-dropzone></app-dropzone>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3">
+                <a class="btn btn-primary" style="background-color: #218ccf; width: 7.5rem; margin-right: 0.5rem;" role="button" (click)="submitTipp3()" id="safe">
+                Speichern</a>
+            </div>
+        </div>
+    <!--</form>-->
+</div>
+
+<script>
+    ClassicEditor
+            .create( document.querySelector( '.editor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+</script>

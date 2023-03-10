@@ -1,0 +1,113 @@
+
+             <div class="allTipps">
+                <div class="body container  mb-5" style="margin-top: 28px;">
+                    <a
+                    role="button"
+                    (click)="basicCollapse.toggle()"
+                    [attr.aria-expanded]="!basicCollapse.collapsed"
+                    aria-controls="collapseTippsErzeugen">
+                  <h5>
+                  <i *ngIf="!basicCollapse.collapsed" class="fas fa-angle-down"></i>
+                  <i *ngIf="basicCollapse.collapsed" class="fas fa-angle-right"></i>
+                  Übersicht aller Tipps & Tricks</h5>
+                  </a>
+                  <div id="collapseTippsErzeugen" mdbCollapse #basicCollapse="mdbCollapse" [collapsed]="false">
+                            <p>In dieser Tabelle werden alle Tipps der Webseite angezeigt. Sie verfügen über
+                                die Möglichkeit einen Tipp auszuwählen und zu löschen.
+                                <br>
+                            </p>
+                        <div class="container">
+                              <div class="input-group rounded mb-4">
+                                <input 
+                                    type="text"
+                                       id="search-box3"
+                                       class="form-control"
+                                       [(ngModel)]="searchItem" 
+                                       placeholder="Suche deinen Tipp"/>
+                                <button class="btn btn-primary"  id="search-box3"  type="button" id="button-addon1" title="search">
+                                    <i class="fa fa-search"></i>
+                                  </button>
+                                  <!-- id="advanced-search-button" -->
+                            </div>   
+                            <div class="force-overflow">
+                                <div class="scrollbar-dusty-grass square thin table-wrapper-scroll-y my-custom-scrollbar">
+                                    <table class="table align-middle mb-3 bg-white" id="tippTable">
+                                        <!-- *ngFor="let item of list;  let i = index" -->
+                                        <thead class="bg-light" style="position:sticky !important;">
+                                            <tr>
+                                                <th class="nameTippth">Titel</th>
+                                                <th class="dateTippth">Link</th>
+                                                <th class="beschreibungTippth">Beschreibung</th>
+                                                <!-- <th class="bilderTipph">Bilder</th> -->
+                                                <th class="deleteTipph">Löschen</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr *ngFor="let tipp of $tipp|filter:searchItem;   let i = index">
+                                                    <!-- *ngFor="let projekt of item;   let projektIndex = index"  (load)="firstProjekts()" -->
+                                                    <td class="nameTipp">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ms-3">
+                                                            <p class="fw-bold mb-1">{{tipp.title}}</p>
+                                                            <p class="text-muted mb-0">Titel</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td  class="linkTipp">
+                                                        <span class="badge badge-success rounded-pill d-inline">Info</span>
+                                                        <p class="fw-normal mb-1">{{tipp.link}}</p>
+                                                    </td>
+                                                    <td class="beschreibungTipp">
+                                                        <p class="fw-normal mb-1">{{tipp.beschreibung}}</p>
+                                                        <!-- <p class="text-muted mb-0">{{projekt.beschreibung}}</p> -->
+                                                    </td>
+                                                    <td class="deleteTipp">
+                                                        <button type="button" class="btn btn-link btn-sm btn-rounded" (click)="deleteTipp(tipp.id)">
+                                                            Löschen
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>    
+                                    </table>
+                                </div>   
+                            </div>
+                            </div>                        
+                         </div>                         
+                    </div>
+                </div>
+
+                <script>
+                        var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+                            Ps.initialize(myCustomScrollbar);
+
+                            var scrollbarY = myCustomScrollbar.querySelector('.ps.ps--active-y>.ps__scrollbar-y-rail');
+
+                            myCustomScrollbar.onscroll = function() {
+                                scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;  
+                            }
+
+                       
+
+                        document.getElementById("search-box3")
+                                .addEventListener("keyup", function () {
+                                let input, filter, tab, td, a, i, txtValue;
+                                input = document.getElementById("search-box3");
+                                filter = input.value.toUpperCase();
+                                tab = document.getElementById("tippTable");
+                                td = tab.getElementsByTagName("td");
+
+                                // Loop through all list items, and hide those who don't match the search query
+                                for (i = 0; i < li.length; i++) {
+                                    a = li[i].getElementsByTagName("p")[0];
+                                    txtValue = a.textContent || a.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    td[i].style.display = "";
+                                    } else {
+                                    td[i].style.display = "none";
+                                    }
+                                }
+                                });
+                   
+                </script>
+            
+         
