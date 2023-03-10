@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "swiper": "^8.4.5"
-  },
-  "devDependencies": {
-    "@types/jquery": "^3.5.16"
-  }
-}
