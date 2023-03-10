@@ -11,6 +11,9 @@ node_modules/
 #Angular
 /ogv-frontend/.angular/**
 
+#Backend
+/ogv-backend/node_modules/
+
 # Vim
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
@@ -34,7 +37,7 @@ yarn-error.log
 
 # example
 /quick-start
-/example_dist
+/ogv-backend/dist
 /example
 
 # tests
