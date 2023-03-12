@@ -1,18 +1,9 @@
-# dependencies
-node_modules/
-
 # IDE
 /.idea
 /.awcache
 /.vscode
 /.devcontainer
 *.code-workspace
-
-#Angular
-/ogv-frontend/.angular/**
-
-#Backend
-/ogv-backend/node_modules/
 
 # Vim
 [._]*.s[a-v][a-z]
@@ -34,11 +25,6 @@ yarn-error.log
 /packages/**/.npmignore
 /packages/**/LICENSE
 *.tsbuildinfo
-
-# example
-/quick-start
-/ogv-backend/dist
-/example
 
 # tests
 /test
